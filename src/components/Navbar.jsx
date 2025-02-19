@@ -4,6 +4,37 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import Image from "next/image";
 
+const translations = {
+  EN: {
+    home: "HOME",
+    tariffs: "TARIFFS",
+    gallery: "GALLERY",
+    chalets: "OUR CHALETS",
+    mounting: "MOUNTING",
+    more: "MORE",
+    about: "About Us",
+    faq: "FAQ",
+    contact: "Contact",
+  },
+  FR: {
+    home: "ACCUEIL",
+    tariffs: "TARIFS",
+    gallery: "GALERIE",
+    chalets: "NOS CHALETS",
+    mounting: "MONTAGE",
+    more: "PLUS",
+    about: "À propos",
+    faq: "FAQ",
+    contact: "Contact",
+  },
+};
+
+export default function Navbar({ currentLang, changeLanguage }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  let lastScrollY = 0;
+
 const navLinks = [
   { href: "/", label: "HOME" },
   { href: "#", label: "TARIFFS" },
@@ -21,13 +52,6 @@ const navLinks = [
   },
 ];
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState("EN");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  let lastScrollY = 0;
-
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -44,10 +68,6 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleLanguage = () => {
-    setCurrentLang(currentLang === "EN" ? "FR" : "EN");
-  };
 
   return (
     <nav
@@ -69,64 +89,109 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-4 space-x-8">
-          {navLinks.map((link) => (
-            <div key={link.label} className="relative group">
-              {link.dropdownItems ? (
-                <div
-                  className="flex items-center cursor-pointer text-gray-600 hover:text-[#E53E3E] transition-colors"
-                  onMouseEnter={() => setIsDropdownOpen(true)}
-                  onMouseLeave={() => setIsDropdownOpen(false)}
-                >
-                  <span>{link.label}</span>
-                  <ChevronDown className="w-4 h-4 ml-1" />
+          <Link
+            href="/"
+            className="text-gray-600 hover:text-[#E53E3E] transition-colors"
+          >
+            {translations[currentLang].home}
+          </Link>
+          <Link
+            href="#"
+            className="text-gray-600 hover:text-[#E53E3E] transition-colors"
+          >
+            {translations[currentLang].tariffs}
+          </Link>
+          <Link
+            href="#"
+            className="text-gray-600 hover:text-[#E53E3E] transition-colors"
+          >
+            {translations[currentLang].gallery}
+          </Link>
+          <Link
+            href="#"
+            className="text-gray-600 hover:text-[#E53E3E] transition-colors"
+          >
+            {translations[currentLang].chalets}
+          </Link>
+          <Link
+            href="#"
+            className="text-gray-600 hover:text-[#E53E3E] transition-colors"
+          >
+            {translations[currentLang].mounting}
+          </Link>
 
-                  {/* Dropdown Menu */}
-                  <div
-                    className={`absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 transition-all duration-200 ${
-                      isDropdownOpen
-                        ? "opacity-100 visible"
-                        : "opacity-0 invisible"
-                    }`}
-                  >
-                    {link.dropdownItems.map((item) => (
-                      <Link
-                        key={item.label}
-                        href={item.href}
-                        className="block px-4 py-2 text-gray-600 hover:text-[#E53E3E] hover:bg-gray-50"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <Link
-                  href={link.href}
-                  className="text-gray-600 hover:text-[#E53E3E] transition-colors"
-                >
-                  {link.label}
-                </Link>
-              )}
+          {/* More Dropdown */}
+          <div className="relative group">
+            <div
+              className="flex items-center cursor-pointer text-gray-600 hover:text-[#E53E3E] transition-colors"
+              onMouseEnter={() => setIsDropdownOpen(true)}
+              onMouseLeave={() => setIsDropdownOpen(false)}
+            >
+              <span>{translations[currentLang].more}</span>
+              <ChevronDown className="w-4 h-4 ml-1" />
             </div>
-          ))}
+            {isDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2">
+                <Link
+                  href="#"
+                  className="block px-4 py-2 text-gray-600 hover:bg-gray-50"
+                >
+                  {translations[currentLang].about}
+                </Link>
+                <Link
+                  href="#"
+                  className="block px-4 py-2 text-gray-600 hover:bg-gray-50"
+                >
+                  {translations[currentLang].faq}
+                </Link>
+                <Link
+                  href="#"
+                  className="block px-4 py-2 text-gray-600 hover:bg-gray-50"
+                >
+                  {translations[currentLang].contact}
+                </Link>
+              </div>
+            )}
+          </div>
 
           {/* Language Switcher */}
-          <button
-            onClick={toggleLanguage}
-            className="flex items-center space-x-2 text-gray-600 hover:text-[#E53E3E] transition-colors"
-          >
-            <Globe className="w-5 h-5" />
-            <span>{currentLang}</span>
-          </button>
+          <div className="relative">
+            <button className="flex items-center space-x-2 text-gray-600 hover:text-[#E53E3E] transition-colors">
+              <Globe className="w-5 h-5" />
+              <span>{currentLang}</span>
+            </button>
+            <div className="absolute top-full left-0 mt-2 w-24 bg-white rounded-lg shadow-lg py-2">
+              <button
+                onClick={() => changeLanguage("EN")}
+                className={`block w-full px-4 py-2 text-left ${
+                  currentLang === "EN"
+                    ? "font-bold text-[#E53E3E]"
+                    : "text-gray-600"
+                } hover:bg-gray-100`}
+              >
+                English
+              </button>
+              <button
+                onClick={() => changeLanguage("FR")}
+                className={`block w-full px-4 py-2 text-left ${
+                  currentLang === "FR"
+                    ? "font-bold text-[#E53E3E]"
+                    : "text-gray-600"
+                } hover:bg-gray-100`}
+              >
+                Français
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-gray-600 hover:text-[#E53E3E] transition-colors"
-        >
-          <Menu className="w-6 h-6" />
-        </button>
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="lg:hidden text-gray-600 hover:text-[#E53E3E] transition-colors"
+      >
+        <Menu className="w-6 h-6" />
+      </button>
       </div>
 
       {/* Mobile Sidebar */}

@@ -2,7 +2,28 @@ import { Phone, ChevronDown, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function Hero() {
+const translations = {
+  EN: {
+    rentAndPurchase: "Rent and Purchase",
+    title: "Collapsible Christmas Chalets",
+    description:
+      "Transform your event with our easy-to-assemble Christmas market chalets. Setup in minutes, create memories for a lifetime.",
+    claimOffer: "Claim Free Offer",
+    viewChalets: "View Our Chalets",
+  },
+  FR: {
+    rentAndPurchase: "Louer et Acheter",
+    title: "Chalets de Noël Pliables",
+    description:
+      "Transformez votre événement avec nos chalets de marché de Noël faciles à assembler. Installation en quelques minutes, souvenirs à vie.",
+    claimOffer: "Réclamer une Offre Gratuite",
+    viewChalets: "Voir Nos Chalets",
+  },
+};
+
+export default function Hero({ currentLang }) {
+  const text = translations[currentLang] || translations["EN"];
+
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -34,7 +55,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="mb-2 max-sm:mb-1 text-[#E53E3E] text-xl font-yellow-tail"
               >
-                Rent and Purchase
+                {text.rentAndPurchase}
               </motion.div>
               <motion.h1
                 className="text-2xl font-bold mb-6 leading-tight text-shadow"
@@ -42,7 +63,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Collapsible Christmas Chalets
+                {text.title}
               </motion.h1>
               <motion.p
                 className="text-base mb-8 text-gray-200 max-sm:text-sm"
@@ -50,8 +71,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                Transform your event with our easy-to-assemble Christmas market
-                chalets. Setup in minutes, create memories for a lifetime.
+                {text.description}
               </motion.p>
               <motion.div
                 className="flex flex-col sm:flex-row gap-4"
@@ -60,10 +80,12 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
                 <button className="btn btn-primary group">
-                  Claim Free Offer{" "}
+                  {text.claimOffer}
                   <ArrowRight className="ml-2 group-hover:ml-3 transition-all" />
                 </button>
-                <button className="btn btn-secondary">View Our Chalets</button>
+                <button className="btn btn-secondary">
+                  {text.viewChalets}
+                </button>
               </motion.div>
             </motion.div>
 
@@ -85,6 +107,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
       {/* Scroll Indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-white"

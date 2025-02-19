@@ -1,9 +1,22 @@
-import { Codepen, MoveUpRight, Rotate3D } from "lucide-react";
+import { MoveUpRight, Rotate3D } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const DiscoverChalets3D = () => {
+const translations = {
+  EN: {
+    title: "DISCOVER OUR CHALETS IN 3D",
+    explore: "Explore All Chalets",
+  },
+  FR: {
+    title: "DÉCOUVREZ NOS CHALETS EN 3D",
+    explore: "Explorer Tous les Chalets",
+  },
+};
+
+const DiscoverChalets3D = ({ currentLang }) => {
+  const text = translations[currentLang] || translations["EN"];
+
   return (
     <section className="py-16 bg-gradient-to-t from-green-700 to-green-700 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/bg1.png')] bg-no-repeat bg-cover opacity-10 contrast-150"></div>
@@ -28,7 +41,7 @@ const DiscoverChalets3D = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-xl font-bold text-center mb-8 text-white flex gap-4 items-center justify-center">
-            DISCOVER OUR CHALETS IN 3D
+            {text.title}
             <Rotate3D size={30} />
           </h2>
         </motion.div>
@@ -45,7 +58,7 @@ const DiscoverChalets3D = () => {
             href="#"
             className="btn btn-secondary flex items-center gap-2 hover:gap-4 transition-all duration-75"
           >
-            Explore All Chalets <MoveUpRight size={18} />
+            {text.explore} <MoveUpRight size={18} />
           </Link>
         </div>
       </div>
