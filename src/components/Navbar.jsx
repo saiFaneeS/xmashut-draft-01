@@ -148,7 +148,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-              className="fixed top-0 right-0 w-[280px] h-screen bg-white shadow-2xl lg:hidden"
+              className="fixed top-0 right-0 w-[320px] h-screen bg-white shadow-2xl lg:hidden"
             >
               <div className="flex justify-between items-center p-5 border-b">
                 <span className="text-xl font-bold text-[#E53E3E]">MENU</span>
@@ -165,18 +165,21 @@ export default function Navbar() {
                   <div key={link.label}>
                     {link.dropdownItems ? (
                       <div
-                        className="flex px-5 py-2 flex-col cursor-pointer text-gray-600 hover:text-[#E53E3E] transition-colors"
+                        className="flex flex-col px-5 py-2 cursor-pointer text-gray-600 hover:text-[#E53E3E] transition-colors"
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                       >
-                        <span>{link.label}</span>
-                        <ChevronDown className="w-4 h-4 ml-1" />
+                        <div
+                        className="flex items-center gap-2">
+                          <span>{link.label}</span>
+                          <ChevronDown className="w-4 h-4 ml-1" />
+                        </div>
 
                         {/* Dropdown Menu */}
                         <div
                           className={`mt-2 w-48 bg-white rounded-md border shadow-lg py-2 transition-all duration-200 ${
                             isDropdownOpen
-                              ? "opacity-100 visible"
-                              : "opacity-0 invisible hidden"
+                              ? "opacity-100 scale-100 visible"
+                              : "opacity-0 scale-0 invisible absolute"
                           }`}
                         >
                           {link.dropdownItems.map((item) => (

@@ -45,10 +45,10 @@ export default function Features() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl font-bold mb-4">Why Choose XMAS HUT?</h2>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <h2 className="text-2xl font-bold mb-4">Why Choose XMAS HUT?</h2>
+        <p className="text-base text-gray-600 max-w-2xl mx-auto">
           Experience the perfect blend of tradition and innovation with our
-          collapsible Christmas chalets
+          collapsible Christmas chalets.
         </p>
       </motion.div>
 
@@ -77,10 +77,10 @@ export default function Features() {
               <div className="w-12 h-12 bg-[#E53E3E] rounded-xl flex items-center justify-center mb-4">
                 <feature.icon className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-white">
+              <h3 className="text-xl max-sm:text-lg font-bold mb-2 text-white">
                 {feature.title}
               </h3>
-              <p className="text-gray-200">{feature.description}</p>
+              <p className="text-gray-200 text-base">{feature.description}</p>
             </div>
           </motion.div>
         ))}

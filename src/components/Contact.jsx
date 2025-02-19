@@ -20,13 +20,13 @@ export default function Contact() {
                 transition={{ duration: 0.6 }}
                 className="mb-12"
               >
-                <h2 className="text-6xl mb-4 font-yellow-tail">Get In Touch</h2>
-                <p className="text-xl text-gray-600 max-w-2xl">
+                <h2 className="text-3xl mb-4 font-yellow-tail">Get In Touch</h2>
+                <p className="text-base text-gray-600 max-w-2xl">
                   Ready to transform your Christmas market? We're here to help!
                 </p>
               </motion.div>
               <div>
-                <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+                <h3 className="text-lg font-bold mb-6">Contact Information</h3>
                 <div className="space-y-4">
                   <a
                     href="tel:+3227810229"
@@ -50,7 +50,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-6">Opening Hours</h3>
+                <h3 className="text-lg font-bold mb-6">Opening Hours</h3>
                 <div className="space-y-2 text-gray-600">
                   <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                   <p>Saturday: 10:00 AM - 4:00 PM</p>

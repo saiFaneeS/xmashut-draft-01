@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="">
         <div className="grid md:grid-cols-4 gap-12 py-16">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold">X-MAS HUT</h3>
+            <h3 className="text-lg font-bold">X-MAS HUT</h3>
             <p className="text-gray-400">
               Transform your Christmas market with our innovative collapsible
               chalets.
@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Products</h3>
+            <h3 className="text-base font-semibold mb-4">Products</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -63,7 +63,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Company</h3>
+            <h3 className="text-base font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -101,7 +101,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Support</h3>
+            <h3 className="text-base font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
               <li>
                 <a

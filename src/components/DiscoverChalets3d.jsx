@@ -27,7 +27,7 @@ const DiscoverChalets3D = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-center mb-8 text-white flex gap-4 items-center justify-center">
+          <h2 className="text-2xl font-bold text-center mb-8 text-white flex gap-4 items-center justify-center">
             DISCOVER OUR CHALETS IN 3D
             <Rotate3D size={30} />
           </h2>

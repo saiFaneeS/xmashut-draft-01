@@ -32,12 +32,12 @@ export default function Hero() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="mb-4 text-[#E53E3E] text-5xl font-yellow-tail"
+                className="mb-2 max-sm:mb-1 text-[#E53E3E] text-2xl font-yellow-tail"
               >
-                Rental and Purchase
+                Rent and Purchase
               </motion.div>
               <motion.h1
-                className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-shadow"
+                className="text-3xl font-bold mb-6 leading-tight text-shadow"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -45,7 +45,7 @@ export default function Hero() {
                 Collapsible Christmas Chalets
               </motion.h1>
               <motion.p
-                className="text-lg mb-8 text-gray-200"
+                className="text-lg mb-8 text-gray-200 max-sm:text-base"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}

@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>DRAFT - XMAS HUT</title>
+        <title>first draft | Xmas Hut</title>
         <meta
           name="description"
           content="Rent or buy collapsible Christmas chalets for your events. Easy assembly in minutes!"
