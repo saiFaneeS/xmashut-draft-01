@@ -22,7 +22,7 @@ const translations = {
 };
 
 export default function Home() {
-  const [currentLang, setCurrentLang] = useState("EN");
+  const [currentLang, setCurrentLang] = useState("FR");
 
   const changeLanguage = (lang) => {
     setCurrentLang(lang);

@@ -90,7 +90,9 @@ export default function Features({ currentLang }) {
         className="text-center mb-16"
       >
         <h2 className="text-xl font-bold mb-4">{text.heading}</h2>
-        <p className="text-sm text-gray-600 max-w-2xl mx-auto">{text.subtext}</p>
+        <p className="text-sm text-gray-600 max-w-2xl mx-auto">
+          {text.subtext}
+        </p>
       </motion.div>
 
       <div className="grid grid-cols-4 grid-rows-2 gap-6 max-w-8xl max-lg:grid-cols-2 max-sm:flex flex-col mx-auto lg:h-[600px]">
@@ -101,9 +103,9 @@ export default function Features({ currentLang }) {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className={`relative overflow-hidden rounded-xl shadow-lg min-h-60 bg-white p-6 
+            className={`relative overflow-hidden rounded-xl shadow-lg min-h-60 w-full bg-white 
                 ${index === 0 ? "col-span-2 row-span-2" : ""}
-                ${index === 1 || index === 2 ? "col-span-1 row-span-1 " : ""}
+                ${index === 1 || index === 2 ? "col-span-1 row-span-1" : ""}
                 ${index === 3 ? "col-span-2 row-span-1" : ""}
               `}
           >
@@ -112,7 +114,8 @@ export default function Features({ currentLang }) {
               alt={feature.title}
               layout="fill"
               objectFit="cover"
-              className="z-0 group-hover:scale-105"
+              quality={80}
+              className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-50 z-10 p-6 flex flex-col justify-end">
               <div className="w-12 h-12 bg-[#E53E3E] rounded-xl flex items-center justify-center mb-4">

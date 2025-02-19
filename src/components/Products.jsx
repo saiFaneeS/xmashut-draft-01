@@ -90,8 +90,9 @@ export default function Products({ currentLang }) {
               <Image
                 src={product.image}
                 alt={product.title}
-                fill
-                className="object-cover"
+                layout="fill"
+                objectFit="cover"
+                quality={70}
               />
               <div className="absolute top-4 right-4">
                 <button className="bg-green-800/20 p-2 rounded-full shadow-lg hover:bg-green-700/10 transition-colors">
@@ -105,7 +106,7 @@ export default function Products({ currentLang }) {
                 {product.features.map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-center gap-2 text-gray-600"
+                    className="flex items-center gap-2 text-gray-600 text-sm"
                   >
                     <ArrowRight className="w-4 h-4 text-[#E53E3E]" />
                     {feature}
