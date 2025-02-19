@@ -13,6 +13,7 @@ export default {
         robotoMedium: ["Roboto-Medium", "sans-serif"],
       },
       fontSize: {
+        xs: "clamp(0.6rem, 0.17vw + 0.66rem, 0.8rem)",
         sm: "clamp(0.8rem, 0.17vw + 0.76rem, 0.95rem)",
         base: "clamp(1rem, 0.34vw + 0.91rem, 1.19rem)",
         lg: "clamp(1.25rem, 0.61vw + 1.1rem, 1.45rem)",

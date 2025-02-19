@@ -24,7 +24,7 @@ export default function Hero() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 h-screen pt-20 flex items-center justify-center px-6 sm:px-12 md:px-16 lg:px-32">
+      <div className="relative z-10 h-screen pt-20 flex items-center justify-center px-6 sm:px-12 md:px-16 lg:px-28">
         <div className="">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeIn} className="text-white">
@@ -32,12 +32,12 @@ export default function Hero() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="mb-2 max-sm:mb-1 text-[#E53E3E] text-2xl font-yellow-tail"
+                className="mb-2 max-sm:mb-1 text-[#E53E3E] text-xl font-yellow-tail"
               >
                 Rent and Purchase
               </motion.div>
               <motion.h1
-                className="text-3xl font-bold mb-6 leading-tight text-shadow"
+                className="text-2xl font-bold mb-6 leading-tight text-shadow"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -45,7 +45,7 @@ export default function Hero() {
                 Collapsible Christmas Chalets
               </motion.h1>
               <motion.p
-                className="text-lg mb-8 text-gray-200 max-sm:text-base"
+                className="text-base mb-8 text-gray-200 max-sm:text-sm"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
@@ -63,7 +63,7 @@ export default function Hero() {
                   Claim Free Offer{" "}
                   <ArrowRight className="ml-2 group-hover:ml-3 transition-all" />
                 </button>
-                <button className="btn  btn-secondary">View Our Chalets</button>
+                <button className="btn btn-secondary">View Our Chalets</button>
               </motion.div>
             </motion.div>
 

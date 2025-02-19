@@ -29,7 +29,7 @@ const products = [
 
 export default function Products() {
   return (
-    <section className="py-24 px-6 sm:px-12 md:px-16 lg:px-32 bg-gray-50">
+    <section className="py-24 px-6 sm:px-12 md:px-16 lg:px-28 bg-gray-50">
       <div className="">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,10 +38,10 @@ export default function Products() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-2xl font-bold mb-4">
+          <h2 className="text-xl font-bold mb-4">
             2 FORMATS OF KIOSKS AVAILABLE
           </h2>
-          <p className="text-base text-gray-600 max-w-2xl mx-auto">
+          <p className="text-sm text-gray-600 max-w-2xl mx-auto">
             2 kiosk formats available for Christmas markets, fairs, and events
           </p>
         </motion.div>
@@ -70,7 +70,7 @@ export default function Products() {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-xl font-bold mb-4">{product.title}</h3>
+                <h3 className="text-lg font-bold mb-4">{product.title}</h3>
                 <ul className="space-y-3 mb-6 grid grid-cols-2">
                   {product.features.map((feature) => (
                     <li
@@ -83,7 +83,7 @@ export default function Products() {
                   ))}
                 </ul>
                 <div className="flex items-center justify-between">
-                  <span className="text-xl font-bold">{product.price}</span>
+                  <span className="text-lg font-bold">{product.price}</span>
                   <button className="btn btn-primary">Learn More</button>
                 </div>
               </div>

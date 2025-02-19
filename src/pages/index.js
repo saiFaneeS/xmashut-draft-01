@@ -28,7 +28,7 @@ export default function Home() {
         <Features />
         <Contact />
         <Footer />
-        <div className="bg-black/90 text-white fixed px-4 py-2 right-4 bottom-4 z-50 text-lg">
+        <div className="bg-black/90 text-white fixed px-4 py-2 right-4 bottom-4 z-50 text-base">
           draft 01
         </div>
       </div>

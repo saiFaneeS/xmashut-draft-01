@@ -51,13 +51,13 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 px-6 sm:px-12 md:px-16 lg:px-32 bg-white/95 py-2 backdrop-blur-sm shadow-lg transition-transform duration-300 ${
+      className={`fixed w-full z-50 px-6 sm:px-12 md:px-16 lg:px-28 bg-white/95 backdrop-blur-sm shadow-lg transition-transform duration-300 text-xs ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="flex justify-between items-center h-20">
+      <div className="flex justify-between items-center h-16">
         {/* Logo */}
-        <Link href={"/"} className="h-14 invert">
+        <Link href={"/"} className="h-10 invert">
           <Image
             className="h-full w-full object-contain"
             src={"/logo.png"}
@@ -151,7 +151,7 @@ export default function Navbar() {
               className="fixed top-0 right-0 w-[320px] h-screen bg-white shadow-2xl lg:hidden"
             >
               <div className="flex justify-between items-center p-5 border-b">
-                <span className="text-xl font-bold text-[#E53E3E]">MENU</span>
+                <span className="text-lg font-bold text-[#E53E3E]">MENU</span>
                 <button
                   onClick={() => setIsOpen(false)}
                   className="text-gray-600 hover:text-[#E53E3E] transition-colors"
@@ -168,8 +168,7 @@ export default function Navbar() {
                         className="flex flex-col px-5 py-2 cursor-pointer text-gray-600 hover:text-[#E53E3E] transition-colors"
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                       >
-                        <div
-                        className="flex items-center gap-2">
+                        <div className="flex items-center gap-2">
                           <span>{link.label}</span>
                           <ChevronDown className="w-4 h-4 ml-1" />
                         </div>
