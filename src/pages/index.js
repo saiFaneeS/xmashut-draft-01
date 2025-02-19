@@ -35,3 +35,5 @@ export default function Home() {
     </>
   );
 }
+
+git remote add origin https://github.com/saiFaneeS/xmas-hut-draft-01.git
